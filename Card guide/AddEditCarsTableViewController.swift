@@ -21,9 +21,8 @@ class AddEditCarsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
+        updateSaveButton()
     }
-
-
 
     func updateUI() {
         manufacturer.text = car.manufacturer
@@ -31,31 +30,33 @@ class AddEditCarsTableViewController: UITableViewController {
         year.text = car.year
         body.text = car.body
         descript.text = car.description
+    }    
+  
+    func updateSaveButton() {
+        let producer = manufacturer.text ?? ""
+        let kind = model.text ?? ""
+        navigationItem.rightBarButtonItem?.isEnabled = !producer.isEmpty && !kind.isEmpty
     }
     
-  
-    // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
 
     }
 
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        guard segue.identifier == "saveSegue" else { return }
+        let producer = manufacturer.text ?? ""
+        let kind = model.text ?? ""
+        let ym = year.text ?? ""
+        let frame = body.text ?? ""
+        let overview = descript.text ?? ""
+        
+        car = Cars(manufacturer: producer, model: kind, year: ym, body: frame, description: overview)
     }
-    */
-
+    
+    @IBAction func textEditingChanged(_ sender: Any) {
+        updateSaveButton()
+    }
 }

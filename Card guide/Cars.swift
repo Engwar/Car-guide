@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Cars {
+struct Cars: Codable {
     var manufacturer: String
     var model: String
     var year: String
