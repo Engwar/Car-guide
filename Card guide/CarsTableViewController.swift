@@ -68,8 +68,7 @@ class CarsTableViewController: UITableViewController {
         if editingStyle == .delete {
             cars.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-      }
+        }
         saveFile()
     }
 
@@ -80,30 +79,24 @@ class CarsTableViewController: UITableViewController {
         saveFile()
     }
 
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "editCar" {
-            let indexPath = tableView.indexPathForSelectedRow!
+        guard segue.identifier == "editCar" else { return }
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
             let car = cars[indexPath.row]
-            let naviController = segue.destination as! UINavigationController
-            let addEditCarTVC = naviController.topViewController as! AddEditCarsTableViewController
-            addEditCarTVC.car = car
-            addEditCarTVC.navigationItem.title = "Editing car info"
-        }
+            let destination = segue.destination as! AddEditCarsTableViewController
+            destination.car = car
+            destination.navigationItem.title = "Editing car info"
     }
     
     @IBAction func unwind(segue: UIStoryboardSegue) {
         guard segue.identifier == "saveSegue" else { return }
         let vc = segue.source as! AddEditCarsTableViewController
         let car = vc.car
-        if let indexPath = tableView.indexPathForSelectedRow {
-            cars[indexPath.row] = car
-            tableView.reloadRows(at: [indexPath], with: .automatic)
+        if let selectedPath = tableView.indexPathForSelectedRow {
+            cars[selectedPath.row] = car
+            tableView.reloadRows(at: [selectedPath], with: .automatic)
         } else {
             let indexPath = IndexPath(row: cars.count, section: 0)
             cars.append(car)

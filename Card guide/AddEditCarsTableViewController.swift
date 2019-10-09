@@ -38,22 +38,18 @@ class AddEditCarsTableViewController: UITableViewController {
         navigationItem.rightBarButtonItem?.isEnabled = !producer.isEmpty && !kind.isEmpty
     }
     
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+    func saveCar() {
+        car.manufacturer = manufacturer.text ?? ""
+        car.model = model.text ?? ""
+        car.year = year.text ?? ""
+        car.body = body.text ?? ""
+        car.description = descript.text ?? ""
     }
 
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
-        guard segue.identifier == "saveSegue" else { return }
-        let producer = manufacturer.text ?? ""
-        let kind = model.text ?? ""
-        let ym = year.text ?? ""
-        let frame = body.text ?? ""
-        let overview = descript.text ?? ""
-        
-        car = Cars(manufacturer: producer, model: kind, year: ym, body: frame, description: overview)
+        saveCar()
     }
     
     @IBAction func textEditingChanged(_ sender: Any) {

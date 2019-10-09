@@ -15,7 +15,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="carsCell" textLabel="aDh-pE-ZLI" detailTextLabel="1At-Or-qaA" style="IBUITableViewCellStyleSubtitle" id="iLc-XX-6yt">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="carsCell" textLabel="aDh-pE-ZLI" detailTextLabel="1At-Or-qaA" style="IBUITableViewCellStyleSubtitle" id="iLc-XX-6yt">
                                 <rect key="frame" x="0.0" y="28" width="375" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iLc-XX-6yt" id="UbC-TM-dzE">
@@ -39,7 +39,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="rlE-6K-bqA" kind="show" identifier="editCar" id="dYQ-Ah-0Lf"/>
+                                    <segue destination="KW2-3s-jIP" kind="show" identifier="editCar" id="uaM-HX-H9Y"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -51,7 +51,7 @@
                     <navigationItem key="navigationItem" title="Cars Handbook" id="g1h-3b-XcS">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="DFa-oq-6wZ">
                             <connections>
-                                <segue destination="rlE-6K-bqA" kind="show" id="nGU-mK-roy"/>
+                                <segue destination="KW2-3s-jIP" kind="show" id="ajA-DD-QkH"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -111,7 +111,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
-                                                        <action selector="textEditingChanged:" destination="KW2-3s-jIP" eventType="editingDidEnd" id="RZB-kj-WpM"/>
+                                                        <action selector="textEditingChanged:" destination="KW2-3s-jIP" eventType="editingChanged" id="ahf-dn-CQ4"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -209,12 +209,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add the car" id="shx-wj-y67">
-                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="cancel" id="cGk-hT-ykt">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="cGk-hT-ykt">
                             <connections>
                                 <segue destination="NcN-u2-PA5" kind="unwind" unwindAction="unwindWithSegue:" id="LQ8-dM-41D"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="zIG-da-CDl">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="zIG-da-CDl">
                             <connections>
                                 <segue destination="NcN-u2-PA5" kind="unwind" identifier="saveSegue" unwindAction="unwindWithSegue:" id="W9C-ae-LK0"/>
                             </connections>
@@ -231,24 +231,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y64-po-yT1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="NcN-u2-PA5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2485.5999999999999" y="37.331334332833585"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="w7a-9u-12a">
-            <objects>
-                <navigationController id="rlE-6K-bqA" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="cq1-uZ-dv1"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="T5m-IZ-yQ0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="KW2-3s-jIP" kind="relationship" relationship="rootViewController" id="MYl-VE-7VM"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x6h-gi-Rmv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1652" y="38"/>
+            <point key="canvasLocation" x="1759" y="38"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ebi-MV-6bX">
@@ -268,6 +251,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="dYQ-Ah-0Lf"/>
+        <segue reference="uaM-HX-H9Y"/>
     </inferredMetricsTieBreakers>
 </document>
