@@ -18,7 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		94625A2C234B5FD300C7BAD3 /* Card guide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Card guide.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		94625A2C234B5FD300C7BAD3 /* Car guide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Car guide.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94625A2F234B5FD300C7BAD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94625A31234B5FD300C7BAD3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		94625A36234B5FD300C7BAD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -52,7 +52,7 @@
 		94625A2D234B5FD300C7BAD3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				94625A2C234B5FD300C7BAD3 /* Card guide.app */,
+				94625A2C234B5FD300C7BAD3 /* Car guide.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -76,9 +76,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		94625A2B234B5FD300C7BAD3 /* Card guide */ = {
+		94625A2B234B5FD300C7BAD3 /* Car guide */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 94625A40234B5FD700C7BAD3 /* Build configuration list for PBXNativeTarget "Card guide" */;
+			buildConfigurationList = 94625A40234B5FD700C7BAD3 /* Build configuration list for PBXNativeTarget "Car guide" */;
 			buildPhases = (
 				94625A28234B5FD300C7BAD3 /* Sources */,
 				94625A29234B5FD300C7BAD3 /* Frameworks */,
@@ -88,9 +88,9 @@
 			);
 			dependencies = (
 			);
-			name = "Card guide";
+			name = "Car guide";
 			productName = "Card guide";
-			productReference = 94625A2C234B5FD300C7BAD3 /* Card guide.app */;
+			productReference = 94625A2C234B5FD300C7BAD3 /* Car guide.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -108,7 +108,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 94625A27234B5FD300C7BAD3 /* Build configuration list for PBXProject "Card guide" */;
+			buildConfigurationList = 94625A27234B5FD300C7BAD3 /* Build configuration list for PBXProject "Car guide" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -121,7 +121,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				94625A2B234B5FD300C7BAD3 /* Card guide */,
+				94625A2B234B5FD300C7BAD3 /* Car guide */,
 			);
 		};
 /* End PBXProject section */
@@ -300,7 +300,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.enigvor.Card-guide";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Car guide";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -318,7 +318,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.enigvor.Card-guide";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Car guide";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -327,7 +327,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		94625A27234B5FD300C7BAD3 /* Build configuration list for PBXProject "Card guide" */ = {
+		94625A27234B5FD300C7BAD3 /* Build configuration list for PBXProject "Car guide" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				94625A3E234B5FD700C7BAD3 /* Debug */,
@@ -336,7 +336,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		94625A40234B5FD700C7BAD3 /* Build configuration list for PBXNativeTarget "Card guide" */ = {
+		94625A40234B5FD700C7BAD3 /* Build configuration list for PBXNativeTarget "Car guide" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				94625A41234B5FD700C7BAD3 /* Debug */,
