@@ -16,7 +16,7 @@ class AddEditCarsTableViewController: UITableViewController {
     @IBOutlet weak var model: UITextField!
     @IBOutlet weak var year: UITextField!
     @IBOutlet weak var body: UITextField!
-    @IBOutlet weak var descript: UITextField!
+    @IBOutlet weak var descript: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
