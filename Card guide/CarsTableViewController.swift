@@ -10,27 +10,26 @@ import UIKit
 
 class CarsTableViewController: UITableViewController {
     
-    var cars: [Cars] = [
-//Cars(manufacturer: "Skoda",
-//                     model: "Rapid",
-//                     year: "2015",
-//                     body: "sedan",
-//                     description: "car mileage - 80 000 mile, excellent condition"),
-//                Cars(manufacturer: "General Motors",
-//                     model: "936 Cadillac V-16",
-//                     year: "1938", body: "converible coupe",
-//                     description: "It's a rare car, only for collection"),
-//                Cars(manufacturer: "Ford",
-//                     model: "Mustang",
-//                     year: "1966",
-//                     body: "fastback",
-//                     description: "In good condition, on drive, tuning: gear, computer access")
-    ]
+    var cars: [Cars] =
+                [Cars(manufacturer: "Skoda",
+                     model: "Rapid",
+                     year: "2015",
+                     body: "sedan",
+                     description: "car mileage - 80 000 mile, excellent condition"),
+                Cars(manufacturer: "General Motors",
+                     model: "936 Cadillac V-16",
+                     year: "1938", body: "converible coupe",
+                     description: "It's a rare car, only for collection"),
+                Cars(manufacturer: "Ford",
+                     model: "Mustang",
+                     year: "1966",
+                     body: "fastback",
+                     description: "In good condition, on drive, tuning: gear, computer access")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem = editButtonItem
-        cars = loadFile() ?? []
+        loadFile()
     }
     
     func saveFile() {
@@ -41,13 +40,13 @@ class CarsTableViewController: UITableViewController {
         try? encodedCars?.write(to: archURL, options: .noFileProtection)
     }
     
-    func loadFile() -> [Cars]? {
+    func loadFile() {
         let documentDir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         let archURL = documentDir.appendingPathComponent("data").appendingPathExtension("plist")
-        guard let data = try? Data(contentsOf: archURL) else { return nil }
+        guard let data = try? Data(contentsOf: archURL) else { return }
         let propListDec = PropertyListDecoder()
-        guard let cars = try? propListDec.decode([Cars].self, from: data) else { return nil }
-        return cars
+        guard let cars = try? propListDec.decode([Cars].self, from: data) else { return }
+        self.cars = cars
     }
 
     // MARK: - Table view data source
@@ -75,7 +74,7 @@ class CarsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-         let removeCar = cars.remove(at: fromIndexPath.row)
+        let removeCar = cars.remove(at: fromIndexPath.row)
         cars.insert(removeCar, at: to.row)
         tableView.reloadData()
         saveFile()
